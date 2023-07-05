@@ -64,7 +64,7 @@
                 <li class="list-group-item"><%= campground.location %></li>
                 <li class="list-group-item">$<%= campground.price %>/night</li>
                 <li class="list-group-item">
-                    Hosted by <a href=""><%= campground.author.username %></a>
+                    Hosted by <%= campground.author.username %>
                 </li>
             </ul>
             <% if (currentUser && campground.author.equals(currentUser._id)) {
@@ -109,10 +109,15 @@
                                 aria-label="No rating"
                                 class="rating__label"
                                 for="rating-none"
-                                style="width: 2rem; display: flex; align-items: center; justify-content: center;"
+                                style="
+                                    width: 2rem;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                "
                             >
                                 <svg
-                                    style="transform: scale(2); margin-top: 1px;"
+                                    style="transform: scale(2); margin-top: 1px"
                                     width="16px"
                                     height="16px"
                                     align="center"
