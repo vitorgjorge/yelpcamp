@@ -8,29 +8,33 @@
     <% for (let campground of campgrounds) {%>
     <div class="col">
         <div class="card">
-            <% if(campground.images.length) { %>
-            <img
-                src="<%= campground.images[0].url %>"
-                class="card-img-top"
-                alt="..."
-                crossorigin="anonymous"
-            />
-            <% } else { %>
-            <img
-                src="https://res.cloudinary.com/dkllabfoq/image/upload/v1687980560/YelpCamp/zpo4usfeynegi0sixhk7.jpg"
-                class="card-img-top"
-                alt="..."
-                crossorigin="anonymous"
-            />
-            <% } %>
+            <div style="max-height: 150px; overflow: hidden">
+                <% if(campground.images.length) { %>
+                <img
+                    src="<%= campground.images[0].url %>"
+                    class="card-img-top"
+                    alt="..."
+                    crossorigin="anonymous"
+                />
+                <% } else { %>
+                <img
+                    src="https://res.cloudinary.com/dkllabfoq/image/upload/v1687980560/YelpCamp/zpo4usfeynegi0sixhk7.jpg"
+                    class="card-img-top"
+                    alt="..."
+                    crossorigin="anonymous"
+                />
+                <% } %>
+            </div>
             <div class="card-body">
                 <h5 class="card-title"><%= campground.title %></h5>
                 <p class="card-text">
                     <small><%= campground.location %></small>
                 </p>
             </div>
-            <div class="card-footer d-flex justify-content-between ">
-                <p class="card-text fw-bold my-2 align-middle">$<%= campground.price %>/night</p>
+            <div class="card-footer d-flex justify-content-between">
+                <p class="card-text fw-bold my-2 align-middle">
+                    $<%= campground.price %>/night
+                </p>
                 <a
                     class="btn btn-primary"
                     href="/campgrounds/<%= campground._id %>"
